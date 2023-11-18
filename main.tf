@@ -28,9 +28,9 @@ module "cloud_sql" {
 
 terraform {
   required_providers {
-    artifactory = {
-      source  = "hashicorp/artifactory"
-      version = "2.0.0"  # Substitua pela versão desejada e existente
+    google = {
+      source  = "hashicorp/google"
+      version = "3.5.0"  # Substitua pela versão desejada e existente
     }
     # Adicione outras configurações de provedor, se necessário
   }
@@ -38,8 +38,8 @@ terraform {
   # Outras configurações do Terraform, se houver
 }
 
-provider "artifactory" {
-  # Configurações do provedor artifactory
+provider "google" {
+  # Configurações do provedor google
+  project = "projeto-7-404421"
+  region  = "us-west1"
 }
-
-# Defina seus recursos e módulos abaixo
