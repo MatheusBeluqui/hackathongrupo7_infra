@@ -41,10 +41,10 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
-  terraform_prod:
+  terraform_prd:
     name: 'Terraform - Prod'
     runs-on: ubuntu-latest
-    environment: prod  # Nome do ambiente conforme suas configurações
+    environment: prd  # Nome do ambiente conforme suas configurações
 
     defaults:
       run:
