@@ -27,10 +27,10 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
   settings {
     tier = var.tier
 
-    ip_configuration {
-      ipv4_enabled    = true
-      private_network = "projects/projeto-7-404421/global/networks/default"
-    }
+ #   ip_configuration {
+     # ipv4_enabled    = true
+     # private_network = "projects/projeto-7-404421/global/networks/default"
+   # }
   }
 
   deletion_protection = false
