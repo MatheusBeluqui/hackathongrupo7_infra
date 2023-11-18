@@ -7,6 +7,13 @@ module "cloud_sql" {
   admin_pass = "qwe123"
 }
 
+module "artifact_registry" {
+  source         = "./modules/artifact_registry"
+  project_id     = "projeto-7-404421"
+  location       = "us-west1"
+  repository_name = "artifact-registry-backend"
+}
+
 terraform {
   required_providers {
     google = {
