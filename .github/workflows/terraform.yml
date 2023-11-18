@@ -37,6 +37,9 @@ jobs:
       - name: Terraform Plan - Hom
         run: terraform plan -input=false
 
+      - name: Set Environment File - Hom
+        run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
+
       - name: Terraform Apply - Hom
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
@@ -67,6 +70,9 @@ jobs:
 
       - name: Terraform Plan - Prd
         run: terraform plan -input=false
+
+      - name: Set Environment File - Prd
+        run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
 
       - name: Terraform Apply - Prd
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
