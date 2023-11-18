@@ -1,13 +1,20 @@
 module "cloud_run" {
   source       = "./modules/cloud_run"
   service_name = "backend-service"
-  image        = "gcr.io/your-project-id/backend-image"
-  environment  = "prod"
+  image        = "gcr.io/projeto-7-404421/backend-image"
+  environment  = "prd"
+}
+
+module "cloud_run" {
+  source       = "./modules/cloud_run"
+  service_name = "frontend-service"
+  image        = "gcr.io/projeto-7-404421/frontend-image"
+  environment  = "prd"
 }
 
 module "artifactory_registry" {
   source = "./modules/artifactory_registry"
-  repo   = "backend-repo"
+  repo   = "artifactory-repo"
 }
 
 module "cloud_sql" {
