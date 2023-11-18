@@ -1,5 +1,3 @@
-# modules/cloud_sql/main.tf
-
 variable "db_name" {
   description = "Nome do banco de dados no Cloud SQL"
 }
