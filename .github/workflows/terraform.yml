@@ -71,8 +71,8 @@ jobs:
       - name: Terraform Plan - Prd
         run: terraform plan -input=false
 
-      - name: Set Environment File - Prd
-        run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
+     # - name: Set Environment File - Prd
+     #   run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
 
       - name: Terraform Apply - Prd
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
