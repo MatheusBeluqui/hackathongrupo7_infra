@@ -10,10 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  terraform_dev:
-    name: 'Terraform - Dev'
+  terraform_hom:
+    name: 'Terraform - Hom'
     runs-on: ubuntu-latest
-    environment: dev  # Nome do ambiente conforme suas configurações
+    environment: hom  # Nome do ambiente conforme suas configurações
 
     defaults:
       run:
