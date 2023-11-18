@@ -32,6 +32,9 @@ terraform {
 
 provider "google" {
   # Configurações do provedor google
+  credentials = {
+    "access_token" = "4/0AfJohXnmhNXD8oqRK_4Hqsfv4SoxgoaLPD1ZcCjh5meZaNRuGM9FqmcVaWuFaeSgRyxDbw"
+  }
   project = "Projeto-7"
   region  = "us-west1"
 }
