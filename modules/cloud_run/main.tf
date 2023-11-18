@@ -1,8 +1,17 @@
-variable "service_name" {}
-variable "image" {}
-variable "environment" {}
+variable "service_name" {
+  description = "Nome do serviço Cloud Run"
+}
 
-resource "google_cloud_run_service" "cloud_run" {
+variable "image" {
+  description = "Imagem do contêiner para o serviço Cloud Run"
+}
+
+variable "environment" {
+  description = "Ambiente (prd, dev, etc.)"
+}
+
+# Recurso Cloud Run
+resource "google_cloud_run_service" "cloud_run_backend" {
   name     = var.service_name
   location = "us-west1"
 
