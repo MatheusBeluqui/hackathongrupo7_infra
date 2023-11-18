@@ -17,8 +17,8 @@ module "artifact_registry" {
 terraform {
   required_providers {
     google = {
-      source  = "hashicorp/google-beta"
-      version = "4.27.0"
+      source  = "hashicorp/google"
+      version = "3.77.0"
     }
   }
 }
