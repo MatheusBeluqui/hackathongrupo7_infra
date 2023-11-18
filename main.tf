@@ -1,4 +1,4 @@
-odule "cloud_run_backend" {
+module "cloud_run_backend" {
   source       = "./modules/cloud_run"
   service_name = "backend-service"
   image        = var.backend_image
