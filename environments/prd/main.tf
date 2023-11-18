@@ -4,7 +4,14 @@ provider "google" {
   region      = "us-central1"  # Altere conforme sua região
 }
 
-module "cloud_run_prd" {
+module "cloud_run_frontend_prd" {
+  source        = "../modules/cloud_run"
+  service_name  = "frontend-service-prd"
+  image         = "gcr.io/projeto-7-404421/frontend-image:prd"
+  environment   = "prd"
+}
+
+module "cloud_run_backend_prd" {
   source        = "../modules/cloud_run"
   service_name  = "backend-service-prd"
   image         = "gcr.io/projeto-7-404421/backend-image:prd"

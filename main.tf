@@ -1,11 +1,11 @@
-module "cloud_run" {
+module "cloud_run_backend" {
   source       = "./modules/cloud_run"
   service_name = "backend-service"
   image        = "gcr.io/projeto-7-404421/backend-image"
   environment  = "prd"
 }
 
-module "cloud_run" {
+module "cloud_run_frontend" {
   source       = "./modules/cloud_run"
   service_name = "frontend-service"
   image        = "gcr.io/projeto-7-404421/frontend-image"

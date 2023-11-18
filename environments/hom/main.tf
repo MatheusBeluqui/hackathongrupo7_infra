@@ -4,7 +4,14 @@ provider "google" {
   region      = "us-central1"  # Altere conforme sua região
 }
 
-module "cloud_run_hom" {
+module "cloud_run_frontend_hom" {
+  source        = "../modules/cloud_run"
+  service_name  = "frontend-service-hom"
+  image         = "gcr.io/projeto-7-404421/frontend-image:hom"
+  environment   = "hom"
+}
+
+module "cloud_run_backend_hom" {
   source        = "../modules/cloud_run"
   service_name  = "backend-service-hom"
   image         = "gcr.io/projeto-7-404421/backend-image:hom"
