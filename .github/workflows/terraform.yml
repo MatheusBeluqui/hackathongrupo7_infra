@@ -10,39 +10,39 @@ permissions:
   contents: read
 
 jobs:
-  terraform_hom:
-    name: 'Terraform - Hom'
-    runs-on: ubuntu-latest
-    environment: hom  # Nome do ambiente conforme suas configurações
-
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-      - name: Terraform Init - Hom
-        run: terraform init -backend-config=environments/hom/backend.tfvars  # Adapte conforme necessário
-
-      - name: Terraform Format - Hom
-        run: terraform fmt -check -write=false
-
-      - name: Terraform Plan - Hom
-        run: terraform plan -input=false
-
-      - name: Set Environment File - Hom
-        run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
-
-      - name: Terraform Apply - Hom
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve -input=false
+#terraform_hom:
+#  name: 'Terraform - Hom'
+#  runs-on: ubuntu-latest
+#  environment: hom  # Nome do ambiente conforme suas configurações
+#
+#  defaults:
+#    run:
+#      shell: bash
+#
+#  steps:
+#    - name: Checkout
+#      uses: actions/checkout@v3
+#
+#    - name: Setup Terraform
+#      uses: hashicorp/setup-terraform@v1
+#      with:
+#        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+#
+#    - name: Terraform Init - Hom
+#      run: terraform init -backend-config=environments/hom/backend.tfvars  # Adapte conforme necessário
+#
+#    - name: Terraform Format - Hom
+#      run: terraform fmt -check -write=false
+#
+#    - name: Terraform Plan - Hom
+#      run: terraform plan -input=false
+#
+#    - name: Set Environment File - Hom
+#      run: echo "TF_OUTPUT_VALUE=$(terraform output some_value)" >> $GITHUB_ENV
+#
+#    - name: Terraform Apply - Hom
+#      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#      run: terraform apply -auto-approve -input=false
 
   terraform_prd:
     name: 'Terraform - Prod'
