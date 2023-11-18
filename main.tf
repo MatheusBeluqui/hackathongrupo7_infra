@@ -11,7 +11,7 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "3.65.0"  # Substitua pela versão desejada e existente
+      version = "4.27.0"
     }
   }
 }
@@ -20,4 +20,5 @@ provider "google" {
   credentials = file("credentials.json")
   project     = "projeto-7-404421"
   region      = "us-west1"
+
 }
