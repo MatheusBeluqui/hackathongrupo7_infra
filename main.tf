@@ -1,14 +1,14 @@
-module "cloud_run_backend" {
+odule "cloud_run_backend" {
   source       = "./modules/cloud_run"
   service_name = "backend-service"
-  image        = "gcr.io/projeto-7-404421/backend-image"
+  image        = var.backend_image
   environment  = "prd"
 }
 
 module "cloud_run_frontend" {
   source       = "./modules/cloud_run"
   service_name = "frontend-service"
-  image        = "gcr.io/projeto-7-404421/frontend-image"
+  image        = var.frontend_image
   environment  = "prd"
 }
 
@@ -20,10 +20,10 @@ module "artifactory_registry" {
 module "cloud_sql" {
   source     = "./modules/cloud_sql"
   db_name    = "app-database"
-  region     = "us-west1"
+  region     = var.region
   tier       = "db-f1-micro"
   admin_user = "admin"
-  admin_pass = "admin_password"
+  admin_pass = var.db_password
 }
 
 terraform {
@@ -40,6 +40,6 @@ terraform {
 
 provider "google" {
   # Configurações do provedor google
-  project = "projeto-7-404421"
-  region  = "us-west1"
+  project = var.project_name
+  region  = var.region
 }
