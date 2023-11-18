@@ -40,6 +40,6 @@ terraform {
 
 provider "google" {
   # Configurações do provedor google
-  project = var.project_name
-  region  = var.region
+  project = "Projeto-7"
+  region  = "us-west1"
 }
