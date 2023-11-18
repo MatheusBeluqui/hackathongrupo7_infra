@@ -66,7 +66,7 @@ jobs:
         run: terraform init -backend-config=environments/prd/backend.tfvars  # Adapte conforme necessário
 
       #- name: Terraform Format - Prd
-     #   run: terraform fmt -check -write=false
+     #  run: terraform fmt -check -write=false
 
       - name: Terraform Plan - Prd
         run: terraform plan -input=false
