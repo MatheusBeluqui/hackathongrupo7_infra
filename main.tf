@@ -12,11 +12,6 @@ module "cloud_run_frontend" {
   environment  = "prd"
 }
 
-module "artifactory_registry" {
-  source = "./modules/artifactory_registry"
-  repo   = "artifactory-repo"
-}
-
 module "cloud_sql" {
   source     = "./modules/cloud_sql"
   db_name    = "app-database"
