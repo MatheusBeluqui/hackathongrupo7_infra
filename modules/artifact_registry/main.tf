@@ -16,3 +16,10 @@ resource "google_artifact_registry_repository" "artifact-registry-backend" {
   description   = "Example docker repository"
   format        = "DOCKER"
 }
+
+resource "google_artifact_registry_repository" "artifact-registry-frontend" {
+  location      = "us-west1"
+  repository_id = "artifact-registry-frontend"
+  description   = "Example docker repository"
+  format        = "DOCKER"
+}
