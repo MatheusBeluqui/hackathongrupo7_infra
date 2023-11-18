@@ -3,11 +3,6 @@ variable "repo" {
 }
 
 resource "google_artifact_registry_repository" "backend_repo" {
-  repository_id = var.repo
-  format        = "docker"
-}
-
-resource "google_artifact_registry_repository" "frontend_repo" {
-  repository_id = "${var.repo}-frontend"
+  repository_id = "artifact_registry_repository"
   format        = "docker"
 }
