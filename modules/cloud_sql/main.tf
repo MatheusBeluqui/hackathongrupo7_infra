@@ -31,7 +31,7 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
 
     ip_configuration {
       ipv4_enabled    = true
-      private_network = "<PRIVATE_NETWORK_NAME>"
+      private_network = "projects/projeto-7-404421/global/networks/default"
     }
   }
 
