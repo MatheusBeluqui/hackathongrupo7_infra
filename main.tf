@@ -18,3 +18,21 @@ module "cloud_sql" {
   admin_user = "admin"
   admin_pass = "admin_password"
 }
+
+terraform {
+  required_providers {
+    artifactory = {
+      source  = "hashicorp/artifactory"
+      version = "2.0.0"  # Substitua pela versão desejada e existente
+    }
+    # Adicione outras configurações de provedor, se necessário
+  }
+  
+  # Outras configurações do Terraform, se houver
+}
+
+provider "artifactory" {
+  # Configurações do provedor artifactory
+}
+
+# Defina seus recursos e módulos abaixo
