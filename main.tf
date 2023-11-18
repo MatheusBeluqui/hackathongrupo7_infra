@@ -1,7 +1,7 @@
 module "cloud_sql" {
   source     = "./modules/cloud_sql"
   db_name    = "app-database"
-  region     ="us-west1"
+  region     = "us-west1"
   tier       = "db-f1-micro"
   admin_user = "admin"
   admin_pass = "qwe123"
@@ -17,7 +17,7 @@ terraform {
 }
 
 provider "google" {
-  credentials     = file("credentials.json")
-  project         = "projeto-7-404421"
-  region          = "us-west1"
+  credentials = file("credentials.json")
+  project     = "projeto-7-404421"
+  region      = "us-west1"
 }
