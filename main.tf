@@ -30,12 +30,9 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "3.5.0"  # Substitua pela versão desejada e existente
+      version = "3.65.0"  # Substitua pela versão desejada e existente
     }
-    # Adicione outras configurações de provedor, se necessário
   }
-  
-  # Outras configurações do Terraform, se houver
 }
 
 provider "google" {
