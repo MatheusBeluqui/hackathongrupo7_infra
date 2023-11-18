@@ -10,16 +10,9 @@ variable "repository_name" {
   description = "Nome do repositório Artifact Registry"
 }
 
-resource "google_artifact_registry_repository" "artifact-registry-backend" {
+resource "google_artifact_registry_repository" "artifact-registry-app" {
   location      = "us-west1"
-  repository_id = "artifact-registry-backend"
-  description   = "Example docker repository"
-  format        = "DOCKER"
-}
-
-resource "google_artifact_registry_repository" "artifact-registry-frontend" {
-  location      = "us-west1"
-  repository_id = "artifact-registry-frontend"
+  repository_id = "artifact-registry-app"
   description   = "Example docker repository"
   format        = "DOCKER"
 }
